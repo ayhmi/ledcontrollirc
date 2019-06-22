@@ -7,7 +7,7 @@ CFLAGS=-Wno-nonnull -I$(IDIR)
 ODIR=src
 LDIR=lib
 
-LIBS=-lwiringPi -llirc
+LIBS=-lwiringPi -llirc_client
 
 _DEPS = 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
