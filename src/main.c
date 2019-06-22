@@ -24,9 +24,8 @@ int main(int argc, char *argv[])
 
     while( lirc_nextcode(&code) == 0)
     {
-        printf("\nCode Received: ", code);
         if (code == NULL) continue;
-        printf("%s", code);
+        printf("%s\n", code);
         free(code);
         if(ret==-1) break;
     }
