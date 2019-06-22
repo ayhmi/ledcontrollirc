@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     int ret;
 
     if( lirc_init("irexec",1) == -1)
-        exit EXIT_FAILURE;
+        return 1;
 
     while( lirc_nextcode(&code) == 0)
     {
@@ -31,5 +31,5 @@ int main(int argc, char *argv[])
     }
 
     lirc_deinit();
-    exit(EXIT_SUCCESS);
+    return 0;
 }
