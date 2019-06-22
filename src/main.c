@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "lirc_client.h"
+#include <lirc/lirc_client.h>
 
 
 int main(int argc, char *argv[])
