@@ -36,17 +36,17 @@ int main(int argc, char *argv[])
     {
         if (code == NULL) continue;
         printf("%s\n", code);
-        if (!strstr(code, KEY_RED))
+        if (strstr(code, KEY_RED))
         {
             redValue ^= 1;
             setLed(RED_LED, redValue);
         }
-        if (!strstr(code, KEY_BLUE))
+        if (strstr(code, KEY_BLUE))
         {
             blueValue ^= 1;
             setLed(BLUE_LED, blueValue);
         }
-        if (!strstr(code, KEY_GREEN))
+        if (strstr(code, KEY_GREEN))
         {
             greenValue ^= 1;
             setLed(GREEN_LED, greenValue);
