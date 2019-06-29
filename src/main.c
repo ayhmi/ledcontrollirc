@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     while( lirc_nextcode(&code) == 0)
     {
         if (code == NULL) continue;
-        printf("%s\n", code);
+        //printf("%s\n", code);
         if (strstr(code, KEY_RED))
         {
             redValue ^= 1;
