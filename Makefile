@@ -7,7 +7,7 @@ CFLAGS=-Wno-nonnull -I$(IDIR)
 ODIR=src
 LDIR=lib
 
-LIBS=-lwiringPi -llirc_client
+LIBS=-lwiringPi -lpthread -llirc_client
 
 _DEPS = colorControl.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
