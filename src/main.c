@@ -12,7 +12,9 @@
 #include <lirc/lirc_client.h>
 #include "colorControl.h"
 
-const char KEY_RED[] = "0000000000000001 00 KEY_RED";
+const char KEY_RED[] = "00 KEY_RED";
+const char KEY_GREEN[] = "00 KEY_GREEN";
+const char KEY_BLUE[] = "00 KEY_BLUE";
 
 
 int main(int argc, char *argv[])
@@ -22,6 +24,8 @@ int main(int argc, char *argv[])
     char *c;
     int ret;
     unsigned char redValue = 0;
+    unsigned char blueValue = 0;
+    unsigned char greenValue = 0;
 
     if( lirc_init("irexec",1) == -1)
         return 1;
@@ -32,12 +36,20 @@ int main(int argc, char *argv[])
     {
         if (code == NULL) continue;
         printf("%s\n", code);
-        if (strlen(KEY_RED) < strlen(code))
-        code[strlen(KEY_RED)] = 0;
-        if (!strcmp(code, KEY_RED))
+        if (!strstr(code, KEY_RED))
         {
             redValue ^= 1;
             setLed(RED_LED, redValue);
+        }
+        if (!strstr(code, KEY_BLUE))
+        {
+            blueValue ^= 1;
+            setLed(BLUE_LED, blueValue);
+        }
+        if (!strstr(code, KEY_GREEN))
+        {
+            greenValue ^= 1;
+            setLed(GREEN_LED, greenValue);
         }
         free(code);
         if(ret==-1) break;
