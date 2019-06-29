@@ -12,7 +12,7 @@
 #include <lirc/lirc_client.h>
 #include "colorControl.h"
 
-const char KEY_RED[] = "00 KEY_RED";
+const char KEY_RED[] = "00 KEY_YELLOW"; // couldn't configure red button
 const char KEY_GREEN[] = "00 KEY_GREEN";
 const char KEY_BLUE[] = "00 KEY_BLUE";
 
