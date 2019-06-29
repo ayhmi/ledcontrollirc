@@ -9,10 +9,10 @@ LDIR=lib
 
 LIBS=-lwiringPi -llirc_client
 
-_DEPS = 
+_DEPS = colorControl.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o
+_OBJ = main.o colorControl.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
